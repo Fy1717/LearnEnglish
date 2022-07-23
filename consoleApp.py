@@ -39,7 +39,7 @@ while count != len(keyAndValues):
     if answer == userAnswer:
         match = "It's True"
 
-    print("YOUR RESULT : ", userAnswer, "\n\nREAL RESULT : ", answer, " --> ", match, "\n")
+    print("\n\nREAL RESULT : ", answer, " --> ", match, "\n")
 
     count += 1
     
