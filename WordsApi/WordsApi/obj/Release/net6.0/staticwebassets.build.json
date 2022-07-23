@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "09NyOa06a1uHr5yNhgWCDJI1BxCBAfATUGaAJapyG8I=",
+  "Source": "WordsApi",
+  "BasePath": "_content/WordsApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
