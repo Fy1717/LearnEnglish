@@ -1,0 +1,35 @@
+1- Lie (n) : Yalan
+2- Republican (a) : Cumhuriyetçi
+3- Patriot (n) : Vatansever
+4- Defend (v) : Savunmak
+5- Loyalty (n) : Bağlılık
+
+6- Content (n) : İçerik
+7- Race (n) : Yarış
+8- Sin (n) : Günah
+9- Con (a) : Hilekar
+10- Confederacy (n) : Konfederasyon
+
+11- Empire (n) : imparatorluk
+12- Acknowledgments (n) : Teşekkür
+13- Bibliography (n) : Kaynakça
+14- Believe (v) : İnanmak
+15- Espouse (v) : Benimsemek
+
+16- Responsibility (n) : Sorumluluk
+17- Debt (n-a) : Borç
+18- Actually : Aslında
+19- Mattered (a) : Önemli
+20- İmmigration (n) : Göç
+
+21- Jump at (v) : Bir fırsata atılmak
+22- Look after (v) : Göz kulak olmak  
+23- Narrative (n) : Hikaye, öykü
+24- Starve (v) : Çok acıkmak
+25- Suspect (v-a) : Şüphelenmek-Şüpheli
+
+26- Abundant (a) : Bol miktarda
+27- Besiege (v) : Kuşatmak
+28- Call on (pv) : Başvurmak, talep etmek
+29- Fall out (pv) : Bozuşmak
+30- Give up (pv) : Bir alışkanlığı bırakmak
