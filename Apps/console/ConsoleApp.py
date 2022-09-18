@@ -1,13 +1,13 @@
 import re
 from tokenize import Token
 from User import User
+from Token import Token
 import http.client
 import json
 
-
+token = Token("", "")
 def login():
     loggedIn = False
-    token = ""
 
     while loggedIn == False:
         username = str(input("Username : "))
@@ -18,18 +18,15 @@ def login():
         loginResult = user.login()
 
         if loginResult["success"]:
-            token = loginResult["data"]
+            token.setTokenStr(loginResult["data"])
+            token.setTokenExpTime("X")
             loggedIn = True
         else:
-            print("PLEASE CHECK YOUR USERNAME AND PASSWORD")
+            print("PLEASE CHECK YOUR USERNAME AND PASSWORD")          
 
-    return token
-
-userToken = login() 
-
-def getWordListFromApi(token):
+def getWordListFromApi(tokenStr):
     conn = http.client.HTTPSConnection("api.learnenglish.helloworldeducation.com", port=443, timeout=60)
-    headers = {"Authorization": "Bearer " + token}
+    headers = {"Authorization": "Bearer " + tokenStr}
     conn.request("GET", "/api/word", "", headers)
     response = conn.getresponse()
     responseCode = response.status
@@ -37,52 +34,52 @@ def getWordListFromApi(token):
     if responseCode == 200:
         result = json.load(response)
 
-        #print("BBBBB : ", response, " : ", response.status, " : " , response.reason, " : ", result)
-
         return {"success": True, "data" : result}
     else:
         return {"success": False}  
 
-allSamples = getWordListFromApi(userToken)["data"]
 
-print(allSamples)
+def askQuestions(samples):
+    #print(samples)
 
-
-
-''' myfile = open("Words.txt", "r", encoding="utf-8")
-keyAndValues = []
-while myfile:
-    try:
-        line = re.sub(r'^a-z', '', myfile.readline().replace("İ", "i").lower().rstrip().replace(" ", "").split("-")[1])
-        keyOfWord = line.split(":")[0]
-        valueOfWord = line.split(":")[1]
+    trueCount = 0
+    falseCount = 0
+    count = 0
+    while count != len(samples):
+        dictOfQuestion = samples[count]
+        question = dictOfQuestion["english"]
+        answer = dictOfQuestion["turkish"].lower().rstrip().replace(" ", "")
         
-        keyAndValues.append({keyOfWord:valueOfWord})
+        print("\nQUESTION : ", question)
+        #print("ANSWER : ", answer)
 
-        if line == "":
-            break
+        userAnswer = str(input("YOUR ANSWER : ").lower().rstrip().replace(" ", ""))
+
+        match = "It's False"
+        if answer == userAnswer:
+            match = "It's True"
+            trueCount += 1
         else:
-            continue
-            #print(keyOfWord + " " + valueOfWord)
-    except:
-        break
+            falseCount += 1
 
-#print(keyAndValues)
-myfile.close() 
+        print("\n\nREAL RESULT : ", answer, " --> ", match, "\n")
 
-count = 1
-while count != len(keyAndValues):
-    dictOfQuestion = keyAndValues[count]
-    question = list(dictOfQuestion.keys())[0]
-    answer = dictOfQuestion[question]
-    
-    print("QUESTION : ", question)
-    userAnswer = str(input("YOUR ANSWER : ").replace(" ", ""))
+        count += 1 
 
-    match = "It's False"
-    if answer == userAnswer:
-        match = "It's True"
+    print("\n\nCOUNT OF TRUE ANSWERS : ", trueCount)
+    print("COUNT OF FALSE ANSWERS : ", falseCount, "\n")
 
-    print("\n\nREAL RESULT : ", answer, " --> ", match, "\n")
 
-    count += 1 '''
+while True:
+    if token.getTokenStr() == "":
+        login() 
+
+    allSamples = getWordListFromApi(token.getTokenStr())["data"]
+    askQuestions(allSamples)
+
+    startAndStopControl = input("Yeniden denemek için direkt 'Enter'\nÇıkış yapmak için 'q' ya ardından 'Enter' tuşuna basınız : ")
+    if "q" == startAndStopControl:
+        exit()
+    else:
+        allSamples = getWordListFromApi(token.getTokenStr())["data"]
+        askQuestions(allSamples)

@@ -1,7 +1,5 @@
 import http.client
 import json
-from urllib import response
-
 class User:
     def __init__(self, username, password):
         self.username=username

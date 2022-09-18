@@ -25,7 +25,6 @@ class Word:
     def setTur(self, turWord):
         self.turkish = turWord
 
-
     def getTurSentence(self):
         return self.turSentence
 
