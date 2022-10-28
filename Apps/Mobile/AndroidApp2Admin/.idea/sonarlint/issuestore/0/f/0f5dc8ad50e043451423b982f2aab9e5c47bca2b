@@ -1,0 +1,17 @@
+
+C
+java:S16044"(Make this anonymous inner class a lambda(¹©Ó•ıÿÿÿÿ
+C
+java:S16049"(Make this anonymous inner class a lambda(œÁÈÌşÿÿÿÿ
+C
+java:S1604Q"(Make this anonymous inner class a lambda(´Õğüÿÿÿÿ
+C
+java:S1604W"(Make this anonymous inner class a lambda(œÁÈÌşÿÿÿÿ
+C
+java:S1604s"(Make this anonymous inner class a lambda(ˆ„ˆ‘øÿÿÿÿ
+C
+java:S1604~"(Make this anonymous inner class a lambda(œÁÈÌşÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Œµ¡Ï
+S	java:S106U"9Replace this use of System.out or System.err by a logger.(Å­Ëİúÿÿÿÿ
+N	java:S106Z"9Replace this use of System.out or System.err by a logger.(öØÈ¢
+O	java:S106"9Replace this use of System.out or System.err by a logger.(öØÈ¢
