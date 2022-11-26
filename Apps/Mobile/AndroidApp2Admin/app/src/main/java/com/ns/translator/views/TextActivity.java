@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.ns.translator.R;
-import com.ns.translator.Translate.EnglishToTurkish;
+import com.ns.translator.viewModels.Translate.EnglishToTurkish;
 import com.ns.translator.models.CameraXImages;
 import com.ns.translator.models.GalleryImages;
 
@@ -27,31 +27,12 @@ public class TextActivity extends AppCompatActivity {
         englishText = findViewById(R.id.englishText);
         turkishText = findViewById(R.id.turkishText);
 
-        //Intent infoIntent = getIntent();
-        //info = infoIntent.getStringExtra("info");
-
         translateTexts();
 
     }
     public void translateTexts() {
         EnglishToTurkish englishToTurkish = new ViewModelProvider(TextActivity.this).get(EnglishToTurkish.class);
 
-//        if (info.matches("gallery")) {
-//            GalleryImages galleryImages = GalleryImages.getInstance();
-//            String englishTextFromGallery = galleryImages.getTextEnglish();
-//
-//            englishText.setText(englishTextFromGallery);
-//            englishToTurkish.setEnglishText(englishTextFromGallery);
-//
-//            englishToTurkish.getTurkishText().observe(TextActivity.this, new Observer<String>() {
-//                @Override
-//                public void onChanged(String s) {
-//                    s = s.replace("\n", " ");
-//                    turkishText.setText(s);
-//                    galleryImages.setTextTurkish(s);
-//                }
-//            });
-//        } else if (info.matches("camerax")) {
         CameraXImages cameraXImages = CameraXImages.getInstance();
         String englishTextFromCameraX = cameraXImages.getTextEnglish();
 
@@ -66,6 +47,5 @@ public class TextActivity extends AppCompatActivity {
                 cameraXImages.setTextTurkish(s);
             }
         });
-        //}
     }
 }

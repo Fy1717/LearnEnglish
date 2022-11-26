@@ -1,6 +1,4 @@
-package com.ns.translator.Translate;
-
-import android.content.Context;
+package com.ns.translator.viewModels.Translate;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
@@ -9,9 +7,6 @@ import androidx.lifecycle.ViewModel;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.mlkit.common.model.DownloadConditions;
-import com.google.mlkit.common.model.RemoteModelManager;
-import com.google.mlkit.nl.translate.TranslateLanguage;
-import com.google.mlkit.nl.translate.TranslateRemoteModel;
 import com.google.mlkit.nl.translate.Translation;
 import com.google.mlkit.nl.translate.Translator;
 import com.google.mlkit.nl.translate.TranslatorOptions;
@@ -19,7 +14,6 @@ import com.ns.translator.models.Languages;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class EnglishToTurkish extends ViewModel {
     private MutableLiveData<Boolean> status = new MutableLiveData<>();
@@ -130,6 +124,5 @@ public class EnglishToTurkish extends ViewModel {
                 }
             });
         }
-
     }
 }

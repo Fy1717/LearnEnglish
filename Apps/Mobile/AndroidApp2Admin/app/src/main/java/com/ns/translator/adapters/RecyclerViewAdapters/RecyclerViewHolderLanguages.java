@@ -1,4 +1,4 @@
-package com.ns.translator.RecyclerViewAdapters;
+package com.ns.translator.adapters.RecyclerViewAdapters;
 
 import androidx.recyclerview.widget.RecyclerView;
 import com.ns.translator.databinding.RecyclerLanguagesRawsBinding;

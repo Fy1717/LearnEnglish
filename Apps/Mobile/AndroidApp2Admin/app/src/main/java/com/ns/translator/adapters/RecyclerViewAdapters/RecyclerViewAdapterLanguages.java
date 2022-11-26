@@ -1,6 +1,5 @@
-package com.ns.translator.RecyclerViewAdapters;
+package com.ns.translator.adapters.RecyclerViewAdapters;
 
-import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;

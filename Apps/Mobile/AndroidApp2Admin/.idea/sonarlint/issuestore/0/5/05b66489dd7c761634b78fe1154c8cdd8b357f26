@@ -1,20 +1,16 @@
 
-E
-java:S1066R"/Merge this if statement with the enclosing one.(ß¸é
-D
-java:S1604“"(Make this anonymous inner class a lambda(šÌªâøÿÿÿÿ
+L
+java:S1066A"/Merge this if statement with the enclosing one.(ß¸é8½¬Œ†Ë0
+J
+java:S1604|"(Make this anonymous inner class a lambda(šÌªâøÿÿÿÿ8¾¬Œ†Ë0
 F
-java:S1172%"+Remove this unused method parameter "view".(–‰Ñ‚ÿÿÿÿÿ
+java:S1172&"+Remove this unused method parameter "view".(–‰Ñ‚ÿÿÿÿÿ
 e
-java:S18747"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(Ó»×¶şÿÿÿÿ
-X	java:S125-"<This block of commented-out lines of code should be removed.(Ò…­Â8ˆ¾öôÁ0
-X	java:S125:"<This block of commented-out lines of code should be removed.(ğÖÃ’8©ÛùôÁ0
-_
-java:S1874N"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(¹Î¾
-G
-java:S1874`"1Remove this use of "getBitmap"; it is deprecated.(Š¬½Ç
-N	java:S106g"9Replace this use of System.out or System.err by a logger.(‡É»á
+java:S1874/"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(Ó»×¶şÿÿÿÿ
+f
+java:S1874="JDon't override a deprecated method or explicitly mark it as "@Deprecated".(¹Î¾8ğ¬Œ†Ë0
+N
+java:S1874O"1Remove this use of "getBitmap"; it is deprecated.(Š¬½Ç8ó¬Œ†Ë0
+U	java:S106V"9Replace this use of System.out or System.err by a logger.(‡É»á8ô¬Œ†Ë0
 H
-java:S1172s"+Remove this unused method parameter "info".(§êÓ´8«ûóôÁ0
-]	java:S125u"<This block of commented-out lines of code should be removed.(­ÜŞòüÿÿÿÿ8¬ûóôÁ0
-]	java:S125y"<This block of commented-out lines of code should be removed.(Åê®Œüÿÿÿÿ8¹ôôÁ0
+java:S1172b"+Remove this unused method parameter "info".(§êÓ´8û¬Œ†Ë0

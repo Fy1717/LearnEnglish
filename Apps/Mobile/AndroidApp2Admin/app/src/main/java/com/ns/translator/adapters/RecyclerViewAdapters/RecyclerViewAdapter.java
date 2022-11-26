@@ -1,4 +1,4 @@
-package com.ns.translator.RecyclerViewAdapters;
+package com.ns.translator.adapters.RecyclerViewAdapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ns.translator.databinding.RecyclerViewRawsBinding;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {

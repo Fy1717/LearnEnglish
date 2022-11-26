@@ -12,8 +12,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.ns.translator.R;
-import com.ns.translator.RecyclerViewAdapters.RecyclerViewAdapterLanguages;
-import com.ns.translator.Translate.EnglishToTurkish;
+import com.ns.translator.adapters.RecyclerViewAdapters.RecyclerViewAdapterLanguages;
+import com.ns.translator.viewModels.Translate.EnglishToTurkish;
 import com.ns.translator.models.Languages;
 import java.util.List;
 

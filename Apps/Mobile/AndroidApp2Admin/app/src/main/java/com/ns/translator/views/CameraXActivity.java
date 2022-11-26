@@ -98,7 +98,6 @@ public class CameraXActivity extends AppCompatActivity {
 
     public void intentToCropper() {
         Intent intent = new Intent(CameraXActivity.this, CropImageActivity.class);
-        //intent.putExtra("info", "camerax");
         startActivity(intent);
         turnOffCam();
         finish();

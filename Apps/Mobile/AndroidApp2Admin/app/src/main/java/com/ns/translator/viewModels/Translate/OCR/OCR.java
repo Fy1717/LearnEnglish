@@ -1,4 +1,4 @@
-package com.ns.translator.OCR;
+package com.ns.translator.viewModels.Translate.OCR;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;

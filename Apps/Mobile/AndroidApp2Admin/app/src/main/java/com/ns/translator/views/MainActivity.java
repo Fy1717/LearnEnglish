@@ -20,7 +20,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Toast;
 import com.ns.translator.R;
-import com.ns.translator.Translate.EnglishToTurkish;
+import com.ns.translator.viewModels.Translate.EnglishToTurkish;
 import com.ns.translator.models.GalleryImages;
 import com.ns.translator.models.Languages;
 
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        intentToLogin();
         control();
     }
 
@@ -42,28 +43,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    public void selectFromGallery(View view) {
-//        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 100);
-//        } else {
-//            Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//            startActivityForResult(intent, 100);
-//        }
-//    }
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-//        if (requestCode == 100) {
-//            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                Toast.makeText(this, "Gallery permission granted", Toast.LENGTH_LONG).show();
-//                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//                startActivityForResult(intent, 100);
-//            } else {
-//                Toast.makeText(this, "Gallery permission denied", Toast.LENGTH_LONG).show();
-//            }
-//        } else
         if(requestCode == 200) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this, "Camera permission granted", Toast.LENGTH_LONG).show();
@@ -114,19 +97,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void intentToCrop(String info) {
         Intent intent = new Intent(MainActivity.this, CropImageActivity.class);
-        //intent.putExtra("info", info);
         startActivity(intent);
     }
 
-//    public void selectLanguage(View view) {
-//        Intent intent = new Intent(MainActivity.this, ChooseLanguage.class);
-//        startActivity(intent);
-//    }
-//
-//    public void downloadedlanguages(View view) {
-//        Intent intent = new Intent(MainActivity.this, DownloadedLanguages.class);
-//        startActivity(intent);
-//    }
+    public void intentToLogin() {
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+    }
 
     public void control() {
         Languages languages = Languages.getInstance();
