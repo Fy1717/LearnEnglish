@@ -14,7 +14,7 @@ import com.ns.translator.R;
 import com.ns.translator.models.CameraXImages;
 import com.ns.translator.models.CameraXImagesOperations;
 import com.ns.translator.models.GalleryImages;
-import com.theartofdev.edmodo.cropper.CropImageView;
+import com.canhub.cropper.CropImageView;
 
 public class CropImageActivity extends AppCompatActivity {
     CropImageView cropImageView;

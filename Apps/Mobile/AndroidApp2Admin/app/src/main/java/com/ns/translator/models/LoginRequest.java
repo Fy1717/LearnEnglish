@@ -1,43 +1,35 @@
-package com.ns.translator.viewModels;
+package com.ns.translator.models;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-import java.io.IOException;
+import android.os.AsyncTask;
+import android.os.Build;
+import android.util.Log;
+
+import androidx.annotation.RequiresApi;
+
+import org.json.JSONObject;
+
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-import okhttp3.Call;
-import okhttp3.Callback;
+
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class LoginViewModel extends ViewModel {
-    private String mMail;
-    private String mPassword;
-    MutableLiveData<String> token = new MutableLiveData<>();
+public class LoginRequest extends AsyncTask<String, String, String> {
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    @Override
+    protected String doInBackground(String... uri) {
+        String responseString = null;
 
-    public LiveData<String> getData() {
-        requestTry();
-        return token;
-    }
-
-    public void setmMail(String mMail) {
-        this.mMail = mMail;
-    }
-    public void setmPassword(String mPassword) {
-        this.mPassword = mPassword;
-    }
-
-    private void requestTry() {
         try {
             String urlParameter = "https://api.learnenglish.helloworldeducation.com/api/User/login";
 
-            String email = mMail;
-            String password = mPassword;
+            String strResponseData = null;
+            Response response = null;
 
             TrustManager[] trustAllCerts = new TrustManager[]{
                     new X509TrustManager() {
@@ -67,13 +59,7 @@ public class LoginViewModel extends ViewModel {
             Request.Builder builder = new Request.Builder();
 
             MediaType mediaType = MediaType.parse("application/json");
-
-            System.out.println("EMAIL : " + email);
-            System.out.println("PASSWORD : " + password);
-
-            String requestText = "{\"mail\": \"" + email + "\",\"password\": \"" + password + "\"}";
-
-            RequestBody body = RequestBody.create(mediaType, requestText);
+            RequestBody body = RequestBody.create(mediaType, "{\"mail\": \"user@user.com\",\"password\": \"user123\"}");
 
             Request request = builder
                     .url(urlParameter)
@@ -81,26 +67,25 @@ public class LoginViewModel extends ViewModel {
                     .addHeader("Content-Type", "application/json")
                     .build();
 
-            newClient.newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(Call call, IOException e) {
-                    System.out.println("ERROR : " + e.getMessage());
-                    token.postValue("empty");
-                }
+            response = newClient.newCall(request).execute();
+            strResponseData = response.body().string();
 
-                @Override
-                public void onResponse(Call call, Response response) throws IOException {
-                    if (response.code() == 200) {
-                        String strResponseData = response.body().string();
-                        token.postValue(strResponseData);
-                    } else {
-                        token.postValue("empty");
-                    }
-                }
-            });
+            System.out.println("response : " + strResponseData);
+
         } catch (Exception e) {
             System.out.println("ERROR 1 : " + e.getMessage());
-            token.setValue("empty");
         }
+
+        return responseString;
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+    }
+
+    @Override
+    protected void onPostExecute(String result) {
+        super.onPostExecute(result);
     }
 }
